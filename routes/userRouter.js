@@ -7,7 +7,7 @@ router.post('/registration', userController.registration)
 router.post('/login', userController.login)
 router.get('/auth', authMiddleware, userController.check)
 router.get('/unsubscribe/:email', (req, res) => {
-    console.log(`${req.params.email} unsubscribed`)
+    console.log(`${req.params.email} отписался`)
     res.send(`Ваш email: ${req.params.email} удален из списка рассылки!`)
 })
 

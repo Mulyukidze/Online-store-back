@@ -16,12 +16,4 @@ const transporter = nodemailer.createTransport(
     }
 )
 
-// const mailer = message => {
-//    transporter.sendMail(message, (err, info) => {
-//         if(err) return console.log(err)
-//         console.log('Email sent: ', info)
-//     })
-// }
-
-// module.exports = mailer
 module.exports = transporter

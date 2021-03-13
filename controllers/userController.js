@@ -40,7 +40,7 @@ class UserController {
             </ul>
             Вы подписаны на рассылку наших акций и предложений,
             чтобы отписаться от рассылки перейдите по ссылке
-            <a href="http://localhost:5000/unsubscribe/${req.body.email}/">отписаться от рассылки</a>
+            <a href="http://localhost:3000/unsubscribe/${req.body.email}/">отписаться от рассылки</a>
             <p>Данное письмо не требует ответа.<p>`
         }
         mailer.sendMail(message, (err, info) => {
