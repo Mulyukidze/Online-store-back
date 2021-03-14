@@ -12,7 +12,7 @@ const transporter = nodemailer.createTransport(
         }
     },
     {
-        from: 'Mailer Test <andreivazirov1@gmail.com>' 
+        from: 'Online-store' 
     }
 )
 
