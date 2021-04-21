@@ -13,6 +13,7 @@ const generateJwt = (id, email, role) => {
 }
 
 class UserController {
+    //Registration
     async registration(req, res, next) {
         const {email, password, role} = req.body
         if (!email || !password) {
@@ -49,7 +50,7 @@ class UserController {
             })
         //end nodemailer
     }
-
+    //Login
     async login(req, res, next) {
         const {email, password} = req.body
         const user = await User.findOne({where: {email}})
@@ -63,7 +64,7 @@ class UserController {
         const token = generateJwt(user.id, user.email, user.role)
         return res.json({token})
     }
-
+    //Check jwt
     async check(req, res, next) {
         const token = generateJwt(req.user.id, req.user.email, req.user.role)
         return res.json({token})
