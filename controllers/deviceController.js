@@ -36,7 +36,7 @@ class DeviceController {
         let {brandId, typeId, limit, page, ordersprice} = req.query
         ordersprice = ordersprice || "ASC"
         page = page || 1
-        limit = limit || 9
+        limit = limit || 8
         let offset = page * limit - limit
         let devices;
         if (!brandId && !typeId) {
@@ -81,7 +81,7 @@ class DeviceController {
             })
             return res.json(device ? device : 'ID не найден')
         } catch (e) {
-        next(ApiError.internal(e.message))
+            next(ApiError.internal(e.message))
         }
     }
     //DELETE
