@@ -1,4 +1,4 @@
-const {Brand} = require('../models/models')
+const { Brand } = require('../models/models')
 const ApiError = require('../error/ApiError');
 const db = require('../db')
 
@@ -7,8 +7,8 @@ class BrandController {
     //POST
     async create(req, res, next) {
         try {
-            const {name} = req.body
-            const brand = await Brand.create({name})
+            const { name } = req.body
+            const brand = await Brand.create({ name })
             return res.json(brand)
         } catch (e) {
             next(ApiError.badRequest(e.message))
@@ -28,8 +28,8 @@ class BrandController {
         try {
             const id = req.params.id
             const brand = await Brand.findOne({
-                    where: { id }
-                })
+                where: { id }
+            })
             return res.json(brand ? brand : 'ID не найден')
         } catch (e) {
             next(ApiError.internal(e.message))
@@ -51,7 +51,7 @@ class BrandController {
             next(ApiError.internal(e.message))
         }
     }
-    //DELETE
+    //DELETE+getOne
     async deleteBrand(req, res, next) {
         try {
             const id = req.params.id;

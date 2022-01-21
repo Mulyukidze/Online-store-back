@@ -7,12 +7,12 @@ const transporter = nodemailer.createTransport(
         secure: false, // true for 465, false for other ports
         // gmail аккаунт для рассылки
         auth: {
-            user: 'andreivazirov1@gmail.com', 
-            pass: '123456Qwerty1' 
+            user: 'andreivazirov1@gmail.com',
+            pass: '123456Qwerty1'
         }
     },
     {
-        from: 'Online-store' 
+        from: 'Online-store'
     }
 )
 

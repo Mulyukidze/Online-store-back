@@ -2,7 +2,7 @@ const Router = require('express')
 const router = new Router()
 const mailer = require('../config/nodemailer')
 
-router.post('/', (req, res) => { 
+router.post('/', (req, res) => {
     //start nodemailer
     const message = {
         to: `mulyuk98@gmail.com`,
@@ -12,8 +12,8 @@ router.post('/', (req, res) => {
         <p>Текст: ${req.body.text}<p>`
     }
     mailer.sendMail(message, (err, info) => {
-            if(err) return console.log(err)
-            return res.json({status:info.rejected.length < 1 ? 'success' : 'failed'})
+        if (err) return console.log(err)
+        return res.json({ status: info.rejected.length < 1 ? 'success' : 'failed' })
     })
     //end nodemailer
 })

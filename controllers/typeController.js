@@ -1,11 +1,11 @@
-const {Type} = require('../models/models')
+const { Type } = require('../models/models')
 const ApiError = require('../error/ApiError');
 
 class TypeController {
     //POST
     async create(req, res) {
-        const {name} = req.body
-        const type = await Type.create({name})
+        const { name } = req.body
+        const type = await Type.create({ name })
         return res.json(type)
     }
     //getAll
@@ -18,13 +18,13 @@ class TypeController {
         try {
             const id = req.params.id
             const type = await Type.findOne({
-                    where: { id }
-                })
+                where: { id }
+            })
             return res.json(type ? type : 'ID не найден')
         } catch (e) {
             next(ApiError.internal(e.message))
         }
-    }    
+    }
     //PUT+getOne
     async updateType(req, res, next) {
         try {
